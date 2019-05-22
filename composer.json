@@ -2,7 +2,8 @@
     "name": "nanasess/mdl_loginwith_amazonpay",
     "type": "library",
     "require": {
-        "nanasess/mdl_sso": "dev-master"
+        "nanasess/mdl_sso": "dev-master",
+        "amzn/amazon-pay-sdk-php": "dev-master"
     },
     "license": "LGPL-2.1-or-later",
     "authors": [
