@@ -1,0 +1,15 @@
+{
+    "name": "nanasess/mdl_loginwith_amazonpay",
+    "type": "library",
+    "require": {
+        "nanasess/mdl_sso": "dev-master"
+    },
+    "license": "LGPL-2.1-or-later",
+    "authors": [
+        {
+            "name": "Kentaro Ohkouchi",
+            "email": "nanasess@fsm.ne.jp"
+        }
+    ],
+    "minimum-stability": "dev"
+}
