@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce790b340dd2e593f98c9682920d9b7c",
+    "content-hash": "e52227af75ba6eb8882e567b17f2e99f",
     "packages": [
         {
             "name": "amzn/amazon-pay-sdk-php",
-            "version": "dev-master",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amzn/amazon-pay-sdk-php.git",
@@ -355,8 +355,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "nanasess/mdl_sso": 20,
-        "amzn/amazon-pay-sdk-php": 20
+        "nanasess/mdl_sso": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
