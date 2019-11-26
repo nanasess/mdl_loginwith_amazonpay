@@ -32,4 +32,21 @@ class SC_Helper_AmazonPay
         $this->region = $region ? $region : getenv('AMZN_REGION');
         $this->sandbox = (bool) $sandbox ? $sandbox : getenv('AMZN_SANDBOX');
     }
+
+    /**
+     * @return AmazonPay\ClientInterface
+     */
+    public function getClient()
+    {
+        $config = [
+            'merchant_id' => $this->merchant_id,
+            'access_key' => $this->access_key,
+            'secret_key' => $this->secret_key,
+            'client_id' => $this->client_id,
+            'region' => $this->region,
+            'sandbox' => $this->sandbox
+        ];
+
+        return new AmazonPay\Client($config);
+    }
 }
