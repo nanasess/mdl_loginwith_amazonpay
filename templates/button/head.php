@@ -4,7 +4,12 @@
      amazon.Login.setClientId('<?php echo $AmznPayHelper->getClientId(); ?>');
  };
  window.onAmazonPaymentsReady = function() {
-     showButton();
+     if (document.querySelector('#AmazonPayButton')) {
+         showButton();
+     }
+     if (document.querySelector('#addressBookWidgetDiv')) {
+         showAddressBookWidget();
+     }
  };
 </script>
 
