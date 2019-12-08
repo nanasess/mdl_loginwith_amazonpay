@@ -1,0 +1,23 @@
+name: CI for Amazon Pay
+on: [ push, pull_request ]
+jobs:
+  run-on-linux:
+    name: Run on Linux
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-18.04 ]
+        php: [ 7.2, 7.3 ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup PHP
+        uses: nanasess/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Install to Composer
+        run: composer install --no-interaction -o
+
+      - name: Run to PHPUnit
+        run: vendor/bin/phpunit

@@ -2,8 +2,7 @@
     "name": "nanasess/mdl_loginwith_amazonpay",
     "type": "library",
     "require": {
-        "nanasess/mdl_sso": "dev-master",
-        "amzn/amazon-pay-sdk-php": "^3.4"
+        "amzn/amazon-pay-sdk-php": "^3.6"
     },
     "license": "LGPL-2.1-or-later",
     "authors": [
@@ -12,5 +11,21 @@
             "email": "nanasess@fsm.ne.jp"
         }
     ],
-    "minimum-stability": "dev"
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "class"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    }
 }
