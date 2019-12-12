@@ -14,13 +14,14 @@
             el.value = accessToken;
         }
     }
- function showButton() {
+ function showButton(key = '') {
      var authRequest;
-     OffAmazonPayments.Button("AmazonPayButton", "<?php echo $AmznPayHelper->getMerchantId(); ?>", {
+     OffAmazonPayments.Button("AmazonPayButton" + key, "<?php echo $AmznPayHelper->getMerchantId(); ?>", {
          type: "PwA",
          color: "Gold",
          size: "medium",
          authorization: function() {
+             document.cookie = "eccube_cart_key=" + key + ";path=/;";
              loginOptions = {scope: "profile payments:widget payments:shipping_address", popup: false};
              authRequest = amazon.Login.authorize (loginOptions, '<?php echo HTTPS_URL; ?>shopping/amazonpay');
          }
