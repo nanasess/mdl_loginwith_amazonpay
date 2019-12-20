@@ -14,6 +14,10 @@ class SC_Helper_AmazonPay
     const SANDBOX_PROFILE_ENDPOINT_URL = 'https://api-sandbox.amazon.co.jp/user/profile';
     /** @var string */
     const PROFILE_ENDPOINT_URL = 'https://api.amazon.co.jp/user/profile';
+    /** @var int */
+    const PAYMENT_ID = 999999;
+    /** @var string */
+    const MODULE_CODE = 'mdl_loginwith_amazonpay';
 
     /** @var string */
     private $merchant_id;
