@@ -11,8 +11,8 @@
       <input type="hidden" name="<!--{$smarty.const.TRANSACTION_ID_NAME}-->" value="<!--{$transactionid}-->" />
       <input type="hidden" name="mode" value="confirm" />
 
-      <input type="text" id="orderReferenceId"  name="orderReferenceId" />
-      <input type="text" id="accessToken" name="accessToken" />
+      <input type="hidden" id="orderReferenceId"  name="orderReferenceId" />
+      <input type="hidden" id="accessToken" name="accessToken" />
       <div class="btn_area">
           <ul>
               <li>
@@ -20,7 +20,7 @@
                       <img class="hover_change_image" src="<!--{$TPL_URLPATH}-->img/button/btn_back.jpg" alt="戻る" border="0" name="back03" id="back03" /></a>
               </li>
               <li>
-                  <input type="image" class="hover_change_image" src="<!--{$TPL_URLPATH}-->img/button/btn_next.jpg" alt="次へ" name="next" id="next" />
+                  <input type="image" class="hover_change_image" src="<!--{$TPL_URLPATH}-->img/button/btn_next.jpg" alt="次へ" name="next" id="next" style="display: none" />
               </li>
           </ul>
       </div>
@@ -78,6 +78,7 @@
               console.log(orderReference.getAmazonOrderReferenceId());
           },
           onPaymentSelect: function() {
+              $('#next').show();
               console.log(arguments);
           },
           design: {
