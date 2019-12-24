@@ -55,6 +55,12 @@ class LC_Page_Shopping_AmazonPay extends LC_Page_Cart_Ex
         }
 
         switch ($this->getMode()) {
+            case 'return':
+                $objSiteSess->setRegistFlag();
+                SC_Response_Ex::sendRedirect(CART_URL);
+                SC_Response_Ex::actionExit();
+                break;
+
             case 'confirm':
                 $cartList = $objCartSess->getCartList($cartKey);
                 // 商品が存在しない場合
@@ -100,7 +106,7 @@ class LC_Page_Shopping_AmazonPay extends LC_Page_Cart_Ex
                 $arrOrder['order_name01'] = $userInfo['name'];
                 $arrOrder['order_email'] = $userInfo['email'];
 
-                $arrOrder['payment_id'] = 999999; // dtb_payment.payment_id
+                $arrOrder['payment_id'] = SC_Helper_AmazonPay::PAYMENT_ID;
                 $arrOrder['payment_method'] = 'Amazon Pay';
 
                 $objPurchase->saveShippingTemp($arrShippings);
