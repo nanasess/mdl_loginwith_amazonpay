@@ -106,7 +106,7 @@ class SC_Helper_AmazonPay
             return getenv('AMZN_SANDBOX_WIDGETS_URL') ? getenv('AMZN_SANDBOX_WIDGETS_URL') : self::SANDBOX_WIDGETS_URL;
         }
 
-        return getenv('AMZN_WIDGETS_URL') ? getenv('AMZN_WIDGETS_URL') : self::MWS_ENDPOINT_URL;
+        return getenv('AMZN_WIDGETS_URL') ? getenv('AMZN_WIDGETS_URL') : self::WIDGETS_URL;
     }
 
     /**
