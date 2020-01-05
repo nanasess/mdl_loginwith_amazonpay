@@ -7,8 +7,11 @@
 
     var accessToken = getURLParameter("access_token", location.hash);
     if (typeof accessToken === 'string' && accessToken.match(/^Atza/)) {
-        // document.cookie = "amazon_Login_accessToken=" + accessToken + ";path=/;secure";
-        document.cookie = "amazon_Login_accessToken=" + accessToken + ";path=/;";
+        <?php if ($AmznPayHelper->useSandbox()): ?>
+            document.cookie = "amazon_Login_accessToken=" + accessToken + ";path=/;";
+        <?php else: ?>
+            document.cookie = "amazon_Login_accessToken=" + accessToken + ";path=/;secure";
+        <?php endif; ?>
         var el;
         if ((el = document.getElementById("accessToken"))) {
             el.value = accessToken;
@@ -21,7 +24,11 @@
          color: "Gold",
          size: "medium",
          authorization: function() {
-             document.cookie = "eccube_cart_key=" + key + ";path=/;";
+             <?php if ($AmznPayHelper->useSandbox()): ?>
+                 document.cookie = "eccube_cart_key=" + key + ";path=/;";
+             <?php else: ?>
+                 document.cookie = "eccube_cart_key=" + key + ";path=/;secure";
+             <?php endif; ?>
              loginOptions = {scope: "profile payments:widget payments:shipping_address", popup: false};
              authRequest = amazon.Login.authorize (loginOptions, '<?php echo HTTPS_URL; ?>shopping/amazonpay');
          }
