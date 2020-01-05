@@ -15,12 +15,14 @@ class SC_Helper_AmazonPayConverter
         $PhysicalDestination = $Destination['PhysicalDestination'];
 
         $Order['name01'] = $PhysicalDestination['Name'];
+        $Order['name02'] = '';
         list($Order['zip01'], $Order['zip02']) = explode('-', $PhysicalDestination['PostalCode']);
         $Order['pref'] = self::convertToPrefId($PhysicalDestination['StateOrRegion']);
         $Order['addr01'] = $PhysicalDestination['City'];
         $Order['addr02'] = $PhysicalDestination['AddressLine1'];
         if (array_key_exists('Phone', $PhysicalDestination)
             && $PhysicalDestination['Phone']) {
+            $PhysicalDestination['Phone'] = str_replace(['‐', '-', '‑', '⁃'], '', $PhysicalDestination['Phone']);
             list($Order['tel01'], $Order['tel02'], $Order['tel03']) = str_split($PhysicalDestination['Phone'], 4);
         }
 
