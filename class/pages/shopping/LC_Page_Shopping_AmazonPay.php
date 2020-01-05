@@ -111,9 +111,8 @@ class LC_Page_Shopping_AmazonPay extends LC_Page_Cart_Ex
                 $arrOrder['payment_method'] = 'Amazon Pay';
 
                 $objPurchase->saveShippingTemp($arrShippings);
-
+                $objPurchase->setShipmentItemTempForSole($objCartSess);
                 $objPurchase->saveOrderTemp($objSiteSess->getUniqId(), $arrOrder);
-
                 $objSiteSess->setRegistFlag();
 
                 // 確認ページへ移動
