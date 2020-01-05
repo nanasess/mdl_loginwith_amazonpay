@@ -21,6 +21,7 @@ class SC_Helper_AmazonPayConverter
         $Order['addr02'] = $PhysicalDestination['AddressLine1'];
         if (array_key_exists('Phone', $PhysicalDestination)
             && $PhysicalDestination['Phone']) {
+            $PhysicalDestination['Phone'] = str_replace(['‐', '-', '‑', '⁃'], '', $PhysicalDestination['Phone']);
             list($Order['tel01'], $Order['tel02'], $Order['tel03']) = str_split($PhysicalDestination['Phone'], 4);
         }
 
