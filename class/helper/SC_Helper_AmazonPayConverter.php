@@ -15,6 +15,7 @@ class SC_Helper_AmazonPayConverter
         $PhysicalDestination = $Destination['PhysicalDestination'];
 
         $Order['name01'] = $PhysicalDestination['Name'];
+        $Order['name02'] = '';
         list($Order['zip01'], $Order['zip02']) = explode('-', $PhysicalDestination['PostalCode']);
         $Order['pref'] = self::convertToPrefId($PhysicalDestination['StateOrRegion']);
         $Order['addr01'] = $PhysicalDestination['City'];

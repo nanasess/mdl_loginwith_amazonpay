@@ -104,6 +104,7 @@ class LC_Page_Shopping_AmazonPay extends LC_Page_Cart_Ex
                 $arrOrder['memo05'] = $orderReferenceId;
                 $arrOrder['memo06'] = $userInfo['user_id'];
                 $arrOrder['order_name01'] = $userInfo['name'];
+                $arrOrder['order_name02'] = '';
                 $arrOrder['order_email'] = $userInfo['email'];
 
                 $arrOrder['payment_id'] = SC_Helper_AmazonPay::PAYMENT_ID;
