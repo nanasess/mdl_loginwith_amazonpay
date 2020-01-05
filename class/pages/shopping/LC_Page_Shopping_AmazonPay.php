@@ -72,8 +72,8 @@ class LC_Page_Shopping_AmazonPay extends LC_Page_Cart_Ex
                 // カートを購入モードに設定
                 $this->lfSetCurrentCart($objSiteSess, $objCartSess, $cartKey);
                 // FIXME
-                $accessToken = $_POST['accessToken'];
-                $orderReferenceId = $_POST['orderReferenceId'];
+                $accessToken = htmlspecialchars($_POST['accessToken'], ENT_QUOTES);
+                $orderReferenceId = htmlspecialchars($_POST['orderReferenceId'], ENT_QUOTES);
                 /** @var AmazonPay\Client $client */
                 $client = $this->objAmzn->getClient();
 
